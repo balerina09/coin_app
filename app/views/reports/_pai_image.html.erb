@@ -1,0 +1,39 @@
+<div>
+  <canvas id="myChart" width="800" height="500"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+  
+  const data = {
+  labels: <%= raw @pai_name %>,
+  datasets: [{
+    label: 'Category sum',
+    data: <%= @pai_sum %>,
+    backgroundColor: [
+        'rgb(39, 179, 245)',
+        'rgb(161, 39, 245)',
+        'rgb(255, 205, 86)',
+        'rgb(108, 0, 125)',
+        'rgb(0, 41, 125)',
+        'rgb(224, 147, 187)',
+        'rgb(245, 40, 145)',
+        'rgb(39, 189, 93)',
+        'rgb(255, 205, 76)'
+      ], 
+    hoverOffset: 4
+  }]
+};
+
+const config = {
+  type: 'pie',
+  data: data,
+  options: {
+    responsive: false
+  }
+};
+
+const myChart = new Chart(ctx, config);
+</script>   
+    

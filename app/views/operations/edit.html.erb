@@ -1,0 +1,9 @@
+<div>
+  <h3>Editing operation</h3>
+    <%= render "form", operation: @operation %>
+</div>
+
+<div>
+  <%= link_to "Back", [@category, @operation], class: 'btn btn-success' %>
+  <%= link_to "Back to operations", operations_path, class: 'btn btn-secondary' %>
+</div>

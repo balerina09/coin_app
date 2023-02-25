@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+
+<h2 style="color: black">All Operations</h2>
+
+<div>
+<%= form_tag(operations_path, :method => "get", id: "search-form") do %>
+  <%= select_tag :search, options_from_collection_for_select(Category.all, "id", "name"),
+   { include_blank: "All category" } %>
+  <%= submit_tag("Search by category", :name => nil) %>
+<% end %>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Operation type</th>
+      <th scope="col">Sum</th>
+      <th scope="col">Data</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% num = 1 %>
+    <% @operations.each do |operation| %>
+    <% category = operation.category %>
+    <tr>
+      <th scope="row"><%= num %></th>
+      <td><%= operation.category.name %></td>
+      <td><%= operation.otype %></td>
+      <td><%= operation.amount %></td>
+      <td><%= operation.odate.strftime('%Y-%m-%d') %></td>
+      <td><%= operation.description %></td>
+      <td><%= link_to "Show this operation", category_operation_path(category, operation),
+        class: "btn btn-outline-success" %></td>
+    </tr>
+    <% num += 1 %>
+    <% end %>
+ </tbody>
+</table>
+
+<%= paginate @operations %>
+
+<%= link_to "Add new operation", new_operation_path, class: "btn btn-info" %>

@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+  <h2 style="color: black">Operations in category "<%= Category.find(params[:category_id]).name %>"</h2>
+
+<div class="p-4">
+  <div id="operations">
+    <% @operations.each do |operation| %>
+      <%= render operation %>
+        <p>
+          <%= link_to "Show this operation", category_operation_path(@category, operation) %>
+        </p>
+    <% end %>
+  </div>
+    <%= paginate @operations %>
+</div>

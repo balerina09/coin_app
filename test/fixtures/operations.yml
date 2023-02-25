@@ -1,0 +1,71 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 9.99
+  odate: 2023-01-15 15:39:27
+  description: textone
+  category: cat_1
+  otype: 0
+
+two:
+  amount: 9.99
+  odate: 2023-01-16 15:39:27
+  description: texttwo
+  category: cat_2
+  otype: 0
+
+three:
+  amount: 9.48
+  odate: 2023-01-18 15:39:27
+  description: textthree
+  category: cat_1
+  otype: 0
+
+four:
+  amount: 2.99
+  odate: 2023-01-20 15:39:27
+  description: textfour
+  category: cat_2
+  otype: 0
+
+five:
+  amount: 12.05
+  odate: 2023-01-21 15:39:27
+  description: textfive
+  category: cat_5
+  otype: 0
+
+six:
+  amount: 259.99
+  odate: 2023-01-22 15:39:27
+  description: textsix
+  category: cat_2
+  otype: 0
+
+seven:
+  amount: 78.26
+  odate: 2023-01-23 15:39:27
+  description: textseven
+  category: cat_7
+  otype: 0
+
+eight:
+  amount: 485.54
+  odate: 2023-01-24 15:39:27
+  description: texteight
+  category: cat_3
+  otype: 0
+
+nine:
+  amount: 755.94
+  odate: 2023-01-25 15:39:27
+  description: textnine
+  category: cat_8
+  otype: 0
+
+ten:
+  amount: 95.19
+  odate: 2023-01-28 15:39:27
+  description: textten
+  category: cat_4
+  otype: 0

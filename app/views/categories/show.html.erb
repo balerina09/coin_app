@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h2 style="color: black">Detail Information</h2>
+
+<%= render @category %>
+
+
+<div class="btn-group">
+  <%= link_to "Edit", edit_category_path(@category), class: 'btn btn-info' %>
+  <%= button_to "Delete", @category, :method =>  'delete',
+   form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger mx-1" %>
+  <%= link_to "Back to categories", categories_path, class: 'btn btn-secondary' %>
+</div>

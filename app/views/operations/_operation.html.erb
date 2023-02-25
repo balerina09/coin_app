@@ -1,0 +1,27 @@
+<div id="<%= dom_id operation %>">
+  <p>
+    <strong>Amount:</strong>
+    <%= operation.amount %>
+  </p>
+
+  <p>
+    <strong>Type operation:</strong>
+    <%= operation.otype %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= operation.odate.strftime('%Y-%m-%d %H:%M:%S') %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= operation.description %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= operation.category.name %>
+  </p>
+
+</div>

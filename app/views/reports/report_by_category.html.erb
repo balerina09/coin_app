@@ -1,0 +1,40 @@
+<% if (params[:start_date]).empty? || (params[:end_date]).empty? %>
+  <h3 style="color: #B00100; margin: 0 auto; font-size: 28px">The data range not selected</h3><br/>
+  <%= link_to "Back to Reports", reports_index_path, class: "btn btn-outline-success" %>
+<% else %>
+<div class="container-fluid">
+  <h2>Financial Report by categories in the date range 
+    <%= params[:start_date] %> - <%= params[:end_date] %></h2>
+
+<div class="col-md-4" style="float:left;">
+ <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% num = 1 %>
+    <% @data.each_pair do |categ, sum| %>
+    <% category_name = Category.find_by(id: categ).name %>
+    <tr>
+      <th scope="row"><%= num %></th>
+      <td><%= category_name %></td>
+      <td><%= sum %></td>
+    </tr>
+    <% num += 1 %>
+    <% end %>
+    <tr>
+      <th scope="row"></th>
+      <td><b>Total:</b></td>
+      <td><b><%= @total %></b></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+  <%= render "pai_image" %>
+</div>
+<% end %>

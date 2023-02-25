@@ -1,0 +1,33 @@
+<%= render 'shared/errors', object: @operation %>
+
+<%= form_with(model: [@category, operation]) do |form| %>
+  
+  <p class="my-3">
+    <%= form.label :amount, 'Amount:' %>
+    <%= form.text_field :amount, placeholder: "Enter the price", required: true %>
+  </p>
+
+  <p class="my-3">
+    <%= form.label :otype, 'Type operation:' %>
+    <%= form.select(:otype, operation_type, {}) %>
+  </p>
+
+  <p class="my-3">
+    <%= form.label :odate, 'Operation date:' %>
+    <%= form.datetime_field :odate, required: true %>
+  </p>
+
+  <p class="my-3">
+    <%= form.label :description, 'Description:' %>
+    <%= form.text_field :description, required: true %>
+  </p>
+
+  <p class="my-3">
+    <%= form.label :category, 'Category:' %>
+    <%= select(:operation, :category_id, @categories) %>
+  </p>
+  
+  <p class="my-3">
+    <%= form.submit class: "btn btn-warning" %>
+  </p>
+<% end %>

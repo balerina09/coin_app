@@ -1,0 +1,38 @@
+<% if (params[:start_date]).empty? || (params[:end_date]).empty? %>
+  <h3 style="color: #B00100; margin: 0 auto; font-size: 28px">The data range not selected</h3><br/>
+  <%= link_to "Back to Reports", reports_index_path, class: "btn btn-outline-success" %>
+<% else %>
+<div class="container-fluid">
+  <h2>Financial Report by categories in the date range 
+    <%= params[:start_date] %> - <%= params[:end_date] %></h2>
+
+  <div>
+  <canvas id="myChart" width="800" height="500"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+  const data = {
+  labels: <%= raw @data_date %>,
+  datasets: [{
+    label: 'Total spending by dates',
+    data: <%= @data_sum %>,
+    fill: false,
+    borderColor: 'rgb(54, 162, 235)',
+    tension: 0.1
+  }]
+};
+
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: false
+  }
+};
+
+const myChart = new Chart(ctx, config);
+</script>   
+<% end %>    

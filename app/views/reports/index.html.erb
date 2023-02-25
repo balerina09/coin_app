@@ -1,0 +1,28 @@
+<div class="col-md-6">
+  <h1>Reports</h1>
+    <form action="index" method="GET">
+    <div class="col-md-6">
+      <label class="form-label"> Select start date: </label>
+        <input class="form-control" type="date" name="start_date">
+    </div>
+       <div class="col-md-6">
+         <label class="form-label"> Select end date: </label>
+       <input class="form-control" type="date" name="end_date">
+      </div>
+    <div class="col-md-6"> 
+      <label class="form-label"> Select type operation:</label>
+        <select class="form-control" name="otype">
+          <option value="0" selected>Outlay</option>
+         <option value="1">Income</option>
+        </select>
+     </div>
+
+   <div class="col-md-6">
+     <br>
+     <input type="submit" formaction="report_by_category" value="View report by category" class="btn btn-primary">
+     <input type="submit" formaction="report_by_dates" value="View report by dates" class="btn btn-primary">
+     </br>
+   </div> 
+  </div>
+</form>
+
