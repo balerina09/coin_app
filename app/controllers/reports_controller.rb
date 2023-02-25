@@ -22,10 +22,10 @@ class ReportsController < ApplicationController
   def report_by_dates
 
     data_chart = Operation.data_for_reports(params[:start_date], params[:end_date], params[:otype])
-                .group("strftime('%Y-%m-%d', odate)").sum(:amount).to_a
+                .group("odate").sum(:amount)
 
-    @data_date = data_chart.map { |e| e[0] }
-    @data_sum = data_chart.map { |e| e[1] }
+    @data_date = data_chart.map { |key, value| key.strftime('%Y-%m-%d') }
+    @data_sum = data_chart.map { |key, value| value }
   end
 
 end
