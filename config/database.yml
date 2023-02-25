@@ -23,6 +23,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  host: dpg-cfspqearrk0c832rpgq0-a
+  port: 5432
+  user_name: coinappdb_user
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   pool: 5
-  url: <%= ENV['DATABASE_URL'] %>
   
