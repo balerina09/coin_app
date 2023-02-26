@@ -1,7 +1,4 @@
-<% if (params[:start_date]).empty? || (params[:end_date]).empty? %>
-  <h3 style="color: #B00100; margin: 0 auto; font-size: 28px">The data range not selected</h3><br/>
-  <%= link_to "Back to Reports", reports_index_path, class: "btn btn-outline-success" %>
-<% else %>
+
 <div class="container-fluid">
   <h2>Financial Report by categories in the date range 
     <%= params[:start_date] %> - <%= params[:end_date] %></h2>
@@ -37,4 +34,4 @@
 
   <%= render "pai_image" %>
 </div>
-<% end %>
+
